@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main{
+    static int[][] createGraph(int V,int[][]edges){
+        int[][]matrix = new int[V][V];
+      for(int[]edge:edges){
+          int u = edge[0];
+          int v= edge[1];
+          matrix[u][v]=1;
+      }
+      return matrix;
+    }
+
+    public static void main(String[] args){
+        int V =4;
+         int[][] edges = {
+                {0, 1},
+                {0, 2},
+                {1, 2},
+                {2, 3}
+        };
+        int[][] graph = createGraph(V,edges);
+        for(int i =0;i<V;i++){
+            for(int j=0;j<V;j++){
+                System.out.print(graph[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    
+}
+    
