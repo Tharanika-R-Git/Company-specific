@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main{
+    public void inorder(TreeNode root){
+        if(root==null)return;
+        Stack<TreeNode>stk = new Stack<>;
+       TreeNode curr = root;
+       while(curr!=null){
+           stk.push(curr);
+           curr = curr.left;
+       }
+       stk.pop(curr);
+       System.out.print(curr.val);
+       curr = curr.right;
+    }
+}
