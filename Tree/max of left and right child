@@ -1,0 +1,33 @@
+class Solution {
+    public List<Integer> largestValues(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Queue<TreeNode>q = new LinkedList<>();
+        q.offer(root);
+        while(!q.isEmpty()){
+            TreeNode node = q.poll();
+            result.add(node.val);
+            if(node.left!= null && node.right!=null){
+                if(node.left.val>node.right.val){
+                    result.add(node.left.val);
+                }
+                
+                else {
+                    result.add(node.right.val);
+                }
+            }
+            else if(node.left!=null){
+                result.add(node.left.val);
+            }
+            else if(node.right!=null){
+                result.add(node.right.val);
+            }
+                
+
+            }
+        
+        return result;
+    }
+}
+
+
+        
